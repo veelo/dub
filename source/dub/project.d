@@ -791,7 +791,7 @@ class Project {
 			if (auto pc = pack.name in m_overriddenConfigs)
 				determineDependencyConfigs(pack_idx, *pc);
 			else
-				foreach (c; pack.package_.getPlatformConfigurations(platform, pack.package_ is m_rootPackage && allow_non_library))
+				foreach (c; pack.package_.getPlatformConfigurations(platform, allow_non_library))
 					determineDependencyConfigs(pack_idx, c);
 		}
 

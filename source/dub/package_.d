@@ -713,8 +713,8 @@ class Package {
 			}
 		}
 
-		// generate default configurations if none are defined
-		if (m_info.configurations.length == 0) {
+		// generate default configurations for root package if none are defined
+		if (m_info.configurations.length == 0 && m_parentPackage is null) {
 			// check for default app_main
 			string app_main_file;
 			auto pkg_name = m_info.name.length ? m_info.name : "unknown";

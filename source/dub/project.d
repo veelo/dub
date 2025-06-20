@@ -749,7 +749,7 @@ class Project {
 				} else {
 					auto subconf = pack.package_.getSubConfiguration(c, packages[dp].package_, platform);
 					if (!subconf.empty) setConfigs(only(subconf));
-					else setConfigs(packages[dp].package_.getPlatformConfigurations(platform));
+					else setConfigs(packages[dp].package_.getPlatformConfigurations(platform, packages[dp].package_.parentPackage !is null));
 				}
 
 				// if no valid configuration was found for a dependency, don't include the
